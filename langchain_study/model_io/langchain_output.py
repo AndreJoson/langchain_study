@@ -5,9 +5,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_openai import ChatOpenAI
 from pydantic import Field, BaseModel
 
-from model_io import lc_static_class
-from model_io.langchain_demo_two import message, chatOpenAI
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 #输出约束，一种提示词模版约束，一种厂商提供的
 load_dotenv()

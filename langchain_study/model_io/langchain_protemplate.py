@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 load_dotenv()
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 #提示词模版
 prompt_template = ChatPromptTemplate.from_messages(

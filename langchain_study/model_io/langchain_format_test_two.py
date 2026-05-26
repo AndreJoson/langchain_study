@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 load_dotenv()
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 ai = ChatOpenAI(model=LS.get_static_model())
 

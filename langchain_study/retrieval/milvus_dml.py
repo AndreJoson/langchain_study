@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pymilvus import MilvusClient
 from FlagEmbedding import BGEM3FlagModel
 
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 
 def getClient():
@@ -14,13 +14,13 @@ def getClient():
 def insert_data():
 
     #1.解析文件
-    docu = UnstructuredWordDocumentLoader("./assets/sample.docx",mode="single").load()
+    docu = UnstructuredWordDocumentLoader("assets/sample.docx", mode="single").load()
     text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n", "。", "！", "？", "……", "，", ""], chunk_size=500,
                                               chunk_overlap=50)
     splitter_split_documents = text_splitter.split_documents(docu)
     documents_ = splitter_split_documents[0:50]
 
-    model = BGEM3FlagModel("/Users/wangbowei/PycharmProjects/langchain_study/retrieval/assets/models/bge-m3")
+    model = BGEM3FlagModel("/langchain_study/retrieval/assets/models/bge-m3")
 
     #转换成向量
     all_vectors = model.encode([doc.page_content for doc in documents_], return_dense=True, return_sparse=True)

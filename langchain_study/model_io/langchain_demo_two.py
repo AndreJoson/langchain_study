@@ -1,9 +1,7 @@
-import asyncio
-
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 load_dotenv()
 # 异步调用

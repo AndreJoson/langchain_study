@@ -1,10 +1,8 @@
-from itertools import chain
-
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
-from model_io.lc_static_class import LS
+from langchain_study.model_io.lc_static_class import LS
 
 template = PromptTemplate(template="讲一个关于{topic}的笑话", input_variables=["topic"])
 
