@@ -1,2 +1,3 @@
 /.venv/
 /retrieval/assets/
+/.env
